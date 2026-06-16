@@ -14,3 +14,10 @@ def sort_dest(_destination):
     destination = df[df['DEST_CITY_STATE'] == _destination]
 
     return destination
+
+def find_by_classes(class_list):
+    df = create_dataframe()
+    mask = df['CLASS_BLOCKS_LIST'].apply(
+        lambda blocks: any(c in blocks for c in class_list)
+    )
+    return df[mask]

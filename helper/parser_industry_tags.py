@@ -21,6 +21,6 @@ def get_yard_by_tag(tag_name):
     if not result.empty:
         return result['Served By Yard'].values[0]
     else:
-        return f"Tag '{tag_name}' wurde nicht gefunden."
+        return None
 
 
